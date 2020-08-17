@@ -21,15 +21,9 @@
     <ClCompile Include="Guerrera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Turno.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Guerrera.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Turno.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

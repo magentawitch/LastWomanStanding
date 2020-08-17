@@ -149,11 +149,9 @@
   <ItemGroup>
     <ClCompile Include="LastWomanStanding.cpp" />
     <ClCompile Include="Guerrera.cpp" />
-    <ClCompile Include="Turno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Guerrera.h" />
-    <ClInclude Include="Turno.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

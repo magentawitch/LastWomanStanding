@@ -4,10 +4,11 @@
 #include <cstdlib>
 #include <cstdio>
 #include "Guerrera.h"
+#include <ctime>
 
 using namespace std;
 
-#define NUMGUERRERAS 3
+#define NUMGUERRERAS 10
 
 //cantidad de vivos
 
@@ -66,61 +67,28 @@ void turno(Guerrera* jugador[], Guerrera* enemigo[])
         Guerrera* elegida = jugador[indiceElegido - 1];
 
 
-        cout << "\nSelecciona que queres hacer este turno. Para eso debes introducir el número correspondiente: " << endl;
+        cout << "\nSelecciona que queres hacer este turno. Para eso debes introducir el numero correspondiente: " << endl;
         cout << "1) Atacar con arma. \n2) Atacar con hechizo. \n3) Defender. " << endl;
         short accion;
         cin >> accion;
 
-        if (accion == 2 || accion == 3)
+        if (accion == 2)
         {
             int mana = elegida->estadoMana();
             if (mana == 0)
             {
-                cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra acción." << endl;
+                cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra accion." << endl;
                 cout << "1) Atacar con arma. \n3) Defender. " << endl;
                 cin >> accion;
                 while (accion == 2)
                 {
-                    cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra acción." << endl;
+                    cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra accion." << endl;
                     cout << "1) Atacar con arma. \n3) Defender. " << endl;
                     cin >> accion;
-
-                }
-            }
-
-            int armadura = elegida->estadoArmadura();
-            if (armadura == 0)
-            {
-                cout << "No puedes defenderte, tu armadura esta hecha trizas. Elige otra acción." << endl;
-                cout << "1) Atacar con arma. \n2)Atacar con Hechizo. " << endl;
-                cin >> accion;
-                while (accion == 3)
-                {
-                    cout << "No puedes defenderte, tu armadura esta hecha trizas. Elige otra acción." << endl;
-                    cout << "1) Atacar con arma. \n2)Atacar con Hechizo. " << endl;
-                    cin >> accion;
-                    if (accion == 2)
-                    {
-                        int mana = elegida->estadoMana();
-                        if (mana == 0)
-                        {
-                            cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra acción." << endl;
-                            cout << "1) Atacar con arma. " << endl;
-                            cin >> accion;
-                            while (accion == 2)
-                            {
-                                cout << "No tienes suficiente mana para conjurar el hechizo. Elige otra acción." << endl;
-                                cout << "1) Atacar con arma. " << endl;
-                                cin >> accion;
-                            }
-                        }
-                    }
                 }
             }
         }
-   
 
-        
         if (accion == 1 || accion == 2)
         {
 
@@ -174,7 +142,6 @@ void turno(Guerrera* jugador[], Guerrera* enemigo[])
             }
         }
 
-
         if (accion == 3)
         {
             elegida->defender();
@@ -186,6 +153,7 @@ void turno(Guerrera* jugador[], Guerrera* enemigo[])
 
 int main()
 {
+    srand(time(NULL));
     //array de equipos
     Guerrera* Magenta[NUMGUERRERAS];
     Guerrera* Violeta[NUMGUERRERAS];
@@ -212,7 +180,8 @@ int main()
         }
     }
 
-
+    cout << "Este es un juego por turnos. Tienes un equipo de " << NUMGUERRERAS << " guerreras con diferentes especializaciones. "
+        "Tu objetivo es derribar a todas las guerreras del equipo contrario." << endl;
 
     while (cantidadVivos(Magenta) != 0 && cantidadVivos(Violeta) != 0)
     {
@@ -242,19 +211,7 @@ int main()
 
     }
 
-
-
-
-
-    
-
  
      
 }
-
-
-/// codigo pasado ///
-
-//cout << "Este es un juego por turnos. Tienes un equipo de 30 guerreras con diferentes especializaciones. "
-//"Tu objetivo es derribar a todas las guerreras del equipo contrario. Para eso... " << endl;
 

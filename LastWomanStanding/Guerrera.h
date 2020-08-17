@@ -3,7 +3,7 @@
 class Guerrera
 {
 protected:
-	int armadura; //armadura funciona como vida. Cuando se daña la armadura, se muere la guerrera.
+	int armadura; //armadura funciona como escudo. Cuando se daña la armadura, se empieza a reducir vida de guerrera.
 	int mana; //disponible para realizar hechizos
 	int m; //cantidad de dados 
 	int n; //cara de dados

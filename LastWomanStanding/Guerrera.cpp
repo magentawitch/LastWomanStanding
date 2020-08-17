@@ -45,11 +45,7 @@ int Guerrera::atacarConHechizo()
         mana--;
         return tiradaDados(m, n) + bonoMagico;
     }
-    //if (mana == 0)
-    //{
-    //    cout << "No tienes suficiente mana para conjurar el hechizo." << endl;
-    //    return 0;
-    //}
+
 }
 
 void Guerrera::defender()
@@ -132,16 +128,10 @@ void Guerrera::imprimirEstadoGuerrera()
         estadoDefensa = "Desactivada";
     }
 
-    string estadoGuerrera;
 
-    //estadoGuerrera = "\n| Clase: " + claseGuerrera + ". | Vida: " + estadoVida + ". | Armadura: " + to_string(armadura)
-    //    + ". | Mana: " + to_string(mana) + ". | Defensa: " + estadoDefensa;
-    //   
-    //int len = size(estadoGuerrera);
-    //cout << len;
-    //cout << setfill (' ') << setw(7) << "-----------------------------------------------------------------------------------" << endl;
+    cout << setw(1) << "---------------------------------------------------------------------------------------------" << endl;
     cout << "| Clase: " << setw(7) << claseGuerrera << ". | ";
-    cout << "Vida: ";
+    cout << "Vida: " << setw(7);
     if (vivo == false)
     {
         cout << estadoVida << ". | ";
@@ -150,11 +140,11 @@ void Guerrera::imprimirEstadoGuerrera()
     {
         cout << vida << ". | ";
     }
-    cout << "Armadura: " << armadura << ". | ";
-    cout << "Mana: "  << mana << ". | ";
-    cout << "Defensa: " << estadoDefensa << ". | " << endl;
-    //cout << setw(7) << "-----------------------------------------------------------------------------------" << endl;
-    //cout << setw(10) << estadoGuerrera << endl;
+    cout << "Armadura: " << setw(3) << armadura << ". | ";
+    cout << "Mana: " << setw(3)  << mana << ". | ";
+    cout << "Defensa: " << setw(14) << estadoDefensa << ". | " << endl;
+    cout << setw(1) << "---------------------------------------------------------------------------------------------" << endl;
+
 }
 
 
@@ -197,21 +187,3 @@ Paladin::Paladin()
 
 
 
-//
-//int Guerrera::recibirDano(int dano)
-//{
-//
-//    if (dano < armadura)
-//    {
-//        armadura -= dano;
-//        return armadura;
-//    }
-//    if (dano >= armadura)
-//    {
-//        armadura = 0;
-//        vivo = false;
-//        return armadura;
-//    }
-//
-//
-//}
